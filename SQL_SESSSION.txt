@@ -1,0 +1,16 @@
+NOTES
+ db.session.query(Person).all()
+[<Id:1, Name-->Anant>, <Id:2, Name-->Andy>, <Id:3, Name-->Sandy>, <Id:4, Name-->Divs>]
+
+>>> db.session.query(Person).filter(Person.name=='Andy').all()
+[<Id:2, Name-->Andy>]
+
+>>> db.session.query(Person).filter(Person.name=='Andy').first()
+<Id:2, Name-->Andy>
+
+you can use relational operators in filter so as to seslct a result
+filter is similar to where clause in a SQL
+>>> db.session.query(Person).filter(Person.id >2).all()
+[<Id:3, Name-->Sandy>, <Id:4, Name-->Divs>]
+
+
