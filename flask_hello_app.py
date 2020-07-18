@@ -11,7 +11,7 @@ class Person(db.Model):
     name = db.Column(db.String(), nullable=False)
 
     def __repr__(self):
-        return f'<Id:{self.id}, Name-->{self.name}>'
+        return f'<Person id:{self.id}, person name{self.name}>'
 
 db.create_all()
 @app.route('/')
