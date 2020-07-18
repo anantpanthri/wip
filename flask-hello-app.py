@@ -13,4 +13,5 @@ class Person(db.Model):
 db.create_all()
 @app.route('/')
 def index():
-    return 'Hello World'
+    person=Person.query.first()
+    return 'Hello '+person.name
