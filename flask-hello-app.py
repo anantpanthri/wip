@@ -10,8 +10,11 @@ class Person(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(), nullable=False)
 
+    def __repr__(self):
+        return f'<Person id:{self.id}, person name{self.name}>'
+
 db.create_all()
 @app.route('/')
 def index():
     person=Person.query.first()
-    return 'Hello '+person.name
+    return 'Hello '+person.name+' my friend'
