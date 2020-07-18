@@ -19,3 +19,15 @@ filter is similar to where clause in a SQL
 >>> Person.query.get(1)
 <Id:1, Name-->Anant>
 
+>>> db.session.query(Person).filter(Person.name.ilike('Ga%')).all()
+[<Id:5, Name-->Garry>]
+
+>>> db.session.query(Person).filter(Person.name.ilike('%a%')).all()
+[<Id:1, Name-->Anant>, <Id:2, Name-->Andy>, <Id:3, Name-->Sandy>, <Id:5, Name-->Garry>]
+
+>>> db.session.query(Person).filter(Person.name.ilike('%a%')).limit(2)
+<flask_sqlalchemy.BaseQuery object at 0x7fc36735a760>
+
+>>> db.session.query(Person).filter(Person.name.ilike('%a%')).limit(2).all()
+[<Id:1, Name-->Anant>, <Id:2, Name-->Andy>]
+
