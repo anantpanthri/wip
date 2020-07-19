@@ -1,4 +1,5 @@
 alias start='pg_ctl -D /usr/local/var/postgres start'
 alias stop='pg_ctl -D /usr/local/var/postgres stop'
 FLASK_APP=flask-hello-app.py FLASK_DEBUG=true flask run
+FLASK_APP=app.py FLASK_DEBUG=true flask run
 
