@@ -17,6 +17,7 @@ class Todo(db.Model):
     list_id= db.Column(db.Integer,db.ForeignKey('todolists.id'),nullable=False)
 
 
+
     def __repr__(self):
         return f'<TODO ID: {self.id}, DESC {self.description}>'
 
